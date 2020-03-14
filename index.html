@@ -3,17 +3,19 @@
 <head>
 <meta charset="utf-8">
 <title>FilmList</title>
-<link rel="stylesheet" href="style.css" type="text/css" media="all" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body onhashchange= "Control()">
-	<div  id="header" class="header-bg">
-		<form>
-			<a href="#start" class="active">Фільми</a>	
-			<p>  <input type="search" id ="search"  placeholder="Пошук фільму"> 
+	<div>
+		<form>	
+			<p> <a href="#start" class="btn btn-primary">Фільми</a> 
+				<input type="search" id ="search"  placeholder="Пошук фільму"> 
 			<input type="submit" value="Знайти" onclick="ButtonClick()"></p>
 		</form>
 	</div>
-	<div id = 'result'></div>
+	<div class="container">
+		<div id = 'result'  class="row"></div>
+	</div>
 	<script src="script.js"></script>
 </body>
 </html>

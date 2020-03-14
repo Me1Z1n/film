@@ -5,6 +5,7 @@
 		root.innerHTML = ""
     	res.results.map(el => {
 			const card = document.createElement('div')
+			card.className = "col-sm"
 			const title = document.createElement('a')
 			title.href = "#"+el.id;
 			title.innerText = el.title
@@ -39,36 +40,57 @@ function GetMovie(root, id)
 		.then(res=>{
 			const title = document.createElement('h1')
 			title.innerText = res.title
+			title.className = "col-xl-10"
+			
+			const img = document.createElement('img')
+			img.className = "img-fluid"
+			img.src = 'http://image.tmdb.org/t/p/w500' + res.poster_path
+			img.width = "450"
 
-			const about = document.createElement('p1')
-			about.innerText = "Опис:  "+ res.overview
 
-			let a = "Жанри: "
-			const genres = document.createElement('p1')
+			const opys = document.createElement('dl')
+			opys.className ="col-xl-6"
+
+			const dt = document.createElement('dt')
+			dt.innerText = "Опис:  "
+			const about = document.createElement('dd')
+			about.innerText = res.overview
+			about.className = "text-muted"
+
+			const dt2 = document.createElement('dt')
+			dt2.innerText = "Жанри: "
+			let a = ""
+			const genres = document.createElement('dd')
 			res.genres.map (g =>
 				{
 					a+=g.name +"  "
 				}) 
-			genres.innerText =a
+			genres.innerText = a;
+			genres.className = "text-muted"
 
-			const br = document.createElement('br')
-			let card = document.createElement('div') 
+			let card = document.createElement('dl') 
 			GetSimilary(card, id)
-
-    		const img = document.createElement('img')
-			img.src = 'http://image.tmdb.org/t/p/w500' + res.poster_path
+			//card.className = "text-muted"
+			
 			root.appendChild(title)
 			root.appendChild(img)
-			root.appendChild(br)
-			root.appendChild(about)
-			root.appendChild(br)
-			root.appendChild(genres)
-			root.appendChild(card)
+			root.appendChild(opys)
+			opys.appendChild(dt)
+			opys.appendChild(about)
+			opys.appendChild(dt2)
+			opys.appendChild(genres)
+			opys.appendChild(card)
 			
 		})
 }
 function GetSimilary(card, id)
 {
+	const dt = document.createElement('dt')	
+	dt.innerText = "Схожі фільми:"
+	card.appendChild(dt)
+
+	const dd = document.createElement('dd')
+	dd.className = "text-muted"
 
 	url =" https://api.themoviedb.org/3/movie/"+id+"/similar?api_key=3a66dca4ab982982a2e4d01db94410b4&language=uk&page=1"
 	fetch(url)
@@ -76,25 +98,22 @@ function GetSimilary(card, id)
 	.then(res => {
 		if(res.total_results === 0)
 		{
-			card.innerText = "Схожих фільмів не знайдено(("
+			dd.innerText = "Схожих фільмів не знайдено(("
 		}
 		else
 		{
-				card.innerText = "Схожі фільми:"
-				res.results.map(r=>{
+			res.results.map(r=>{
 				const title = document.createElement('a')
 				const br = document.createElement('br')
 				title.href = "#"+r.id;
 				title.innerText = r.title
-				card.appendChild(br)
-				card.appendChild(title)
+				dd.appendChild(title)
+				dd.appendChild(br)
 			})
 		}
-	//	return card
-
 	})
+	card.appendChild(dd)
 }
-
 function SearchFilm(root)
 {
 	root.innerHTML=""
