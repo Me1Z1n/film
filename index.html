@@ -3,15 +3,14 @@
 <head>
 <meta charset="utf-8">
 <title>FilmList</title>
-<link>
+<link rel="stylesheet" href="style.css" type="text/css" media="all" />
 </head>
 <body onhashchange= "Control()">
-
-	<div id = 'head'>
+	<div  id="header" class="header-bg">
 		<form>
-			<p> <a href="#start">Фільми</a>
-			<input type="search" name="searchbox" placeholder="Пошук фільму"> 
-			<input type="submit" value="Знайти"></p>
+			<a href="#start" class="active">Фільми</a>	
+			<p>  <input type="search" id ="search"  placeholder="Пошук фільму"> 
+			<input type="submit" value="Знайти" onclick="ButtonClick()"></p>
 		</form>
 	</div>
 	<div id = 'result'></div>
