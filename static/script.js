@@ -7,7 +7,7 @@
 			const col = document.createElement('div');
 			col.className = "col-sm";
 			const card = document.createElement('div');
-			card.className = "card h-100 border border-light shadow-0 mb-5";
+			card.className = "card border border-light shadow-0 mb-5";
 			const title = document.createElement('a');
 			title.href = "#"+el.id;
 			title.innerText = el.title;
