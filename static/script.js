@@ -47,15 +47,20 @@ function GetMovie(root, id)
 		.then(res=>{
 			const cont = document.getElementById("result");
 			cont.className = "row row-cols-md-2";
+
+			const imgTitle = document.createElement('div')
+			imgTitle.className ="col"
+
+
 			const title = document.createElement('h1')
 			title.innerText = res.title
-			title.className = "col"
 			
 			const img = document.createElement('img')
-			img.className = "img-fluid"
 			img.src = 'http://image.tmdb.org/t/p/w500' + res.poster_path
 			img.width = "450"
 
+			imgTitle.appendChild(title);
+			imgTitle.appendChild(img);
 
 			const opys = document.createElement('dl')
 			opys.className ="col"
@@ -81,8 +86,7 @@ function GetMovie(root, id)
 			GetSimilary(card, id)
 			//card.className = "text-muted"
 			
-			root.appendChild(title)
-			root.appendChild(img)
+			root.appendChild(imgTitle)
 			root.appendChild(opys)
 			opys.appendChild(dt)
 			opys.appendChild(about)
