@@ -7,15 +7,25 @@
 </head>
 <body onhashchange= "Control()">
 	<div>
-		<form>	
-			<p> <a href="#start" class="btn btn-primary">Фільми</a> 
-				<input type="search" id ="search"  placeholder="Пошук фільму"> 
-			<input type="submit" value="Знайти" onclick="ButtonClick()"></p>
-		</form>
+		<header>	
+			<a class="navbar-brand" href="#start">Фільми</a> 
+			<form class="form-inline my-2 my-lg-0">
+				<input class="form-control mr-sm-2" type="search" id ="search" placeholder="Пошук фільму" >
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="ButtonClick()">Search</button>
+			</form>	
+		</header>
 	</div>
 	<div class="container">
 		<div id = 'result'  class="row"></div>
 	</div>
 	<script src="script.js"></script>
+	
+	<footer class="bg-light text-center text-lg-start">
+		<div class="text-center p-3" style="background-color: rgba(57, 109, 158, 0.521)">
+		  © 2020 Bazan Tetyana, SN-41, TNTU
+		</div>
+
+	</footer>
+
 </body>
 </html>
