@@ -4,18 +4,20 @@
     .then(res => {
 		root.innerHTML = ""
     	res.results.map(el => {
-			const card = document.createElement('div')
-			card.className = "col-sm"
-			const title = document.createElement('a')
+			const card = document.createElement('div');
+			card.className = "card";
+			const title = document.createElement('a');
 			title.href = "#"+el.id;
-			title.innerText = el.title
-	   		const br = document.createElement('br')
-	   		const img = document.createElement('img')
-   			img.src = 'http://image.tmdb.org/t/p/w200' + el.poster_path
-   			card.appendChild(img)
-			card.appendChild(br)
-			card.appendChild(title)
-			root.appendChild(card)
+			title.innerText = el.title;
+			title.className = "card-link";
+	   		const br = document.createElement('br');
+	   		const img = document.createElement('img');
+			img.src = 'http://image.tmdb.org/t/p/w200' + el.poster_path;
+			img.className = "card-img-top";  
+   			card.appendChild(img);
+			card.appendChild(br);
+			card.appendChild(title);
+			root.appendChild(card);
        })
     })
 }
