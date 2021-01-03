@@ -57,7 +57,7 @@ function GetMovie(root, id)
 			
 			const img = document.createElement('img')
 			img.src = 'http://image.tmdb.org/t/p/w500' + res.poster_path
-			img.width = "450"
+			img.width = "auto"
 
 			imgTitle.appendChild(title);
 			imgTitle.appendChild(img);
