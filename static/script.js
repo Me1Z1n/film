@@ -2,7 +2,9 @@
 	fetch('https://api.themoviedb.org/3/trending/movie/week?api_key=3a66dca4ab982982a2e4d01db94410b4&language=uk&include_image_language=uk,null')
 	.then(response => response.json())
     .then(res => {
-		root.innerHTML = ""
+		const cont = document.getElementById("result");
+		cont.className = "row row-cols-md-4";
+		root.innerHTML = "";
     	res.results.map(el => {
 			const col = document.createElement('div');
 			col.className = "col-md-auto";
@@ -43,6 +45,8 @@ function GetMovie(root, id)
 	fetch(url)
 		.then(response=>response.json())
 		.then(res=>{
+			const cont = document.getElementById("result");
+			cont.className = "row row-cols-md-2";
 			const title = document.createElement('h1')
 			title.innerText = res.title
 			title.className = "col-xl-10"
