@@ -49,7 +49,7 @@ function GetMovie(root, id)
 			cont.className = "row row-cols-md-2";
 
 			const imgTitle = document.createElement('div')
-			imgTitle.className ="col"
+			imgTitle.className ="col card"
 
 
 			const title = document.createElement('h1')
@@ -57,7 +57,7 @@ function GetMovie(root, id)
 			
 			const img = document.createElement('img')
 			img.src = 'http://image.tmdb.org/t/p/w500' + res.poster_path
-			//img.width = "auto"
+			img.class = "card-img-top"
 
 			imgTitle.appendChild(title);
 			imgTitle.appendChild(img);
