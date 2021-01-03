@@ -143,7 +143,7 @@ function SearchFilm(root)
 		.then(res => {
 			if(res.total_results === 0)
 			{
-				card.innerText = "Нічого не знайдено(("
+				card.innerText = "Нічого не знайдено(( Спробуйте ввести назву фільму англійською"
 			}
 			else
 			{
