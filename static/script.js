@@ -13,7 +13,7 @@
 			const title = document.createElement('a');
 			title.href = "#"+el.id;
 			title.innerText = el.title;
-			title.className = "btn btn-light";
+			title.className = "btn btn-light card-body";
 	   		const br = document.createElement('br');
 	   		const img = document.createElement('img');
 			img.src = 'http://image.tmdb.org/t/p/w200' + el.poster_path;
