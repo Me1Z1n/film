@@ -3,7 +3,7 @@
 	.then(response => response.json())
     .then(res => {
 		const cont = document.getElementById("result");
-		cont.className = "row row-cols-md-4";
+		cont.className = "row row-cols-md-5";
 		root.innerHTML = "";
     	res.results.map(el => {
 			const col = document.createElement('div');
@@ -49,7 +49,7 @@ function GetMovie(root, id)
 			cont.className = "row row-cols-md-2";
 			const title = document.createElement('h1')
 			title.innerText = res.title
-			title.className = "col-xl-10"
+			title.className = "col"
 			
 			const img = document.createElement('img')
 			img.className = "img-fluid"
@@ -58,7 +58,7 @@ function GetMovie(root, id)
 
 
 			const opys = document.createElement('dl')
-			opys.className ="col-xl-6"
+			opys.className ="col"
 
 			const dt = document.createElement('dt')
 			dt.innerText = "Опис:  "
