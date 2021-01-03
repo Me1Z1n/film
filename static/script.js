@@ -5,7 +5,7 @@
 		root.innerHTML = ""
     	res.results.map(el => {
 			const col = document.createElement('div');
-			col.className = "col-sm";
+			col.className = "col-md-auto";
 			const card = document.createElement('div');
 			card.className = "card border border-light shadow-0 mb-5";
 			const title = document.createElement('a');
