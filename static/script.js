@@ -2,8 +2,7 @@
 	fetch('https://api.themoviedb.org/3/trending/movie/week?api_key=3a66dca4ab982982a2e4d01db94410b4&language=uk&include_image_language=uk,null')
 	.then(response => response.json())
     .then(res => {
-		const cont = document.getElementById("result");
-		cont.className = "row row-cols-md-5";
+		root.className = "row row-cols-md-5";
 		root.innerHTML = "";
     	res.results.map(el => {
 			const col = document.createElement('div');
@@ -58,6 +57,7 @@ function GetMovie(root, id)
 			const img = document.createElement('img')
 			img.src = 'http://image.tmdb.org/t/p/w500' + res.poster_path
 			img.class = "card-img-top"
+			img.width = "100%"
 
 			imgTitle.appendChild(title);
 			imgTitle.appendChild(img);
@@ -93,7 +93,6 @@ function GetMovie(root, id)
 			opys.appendChild(dt2)
 			opys.appendChild(genres)
 			opys.appendChild(card)
-			
 		})
 }
 function GetSimilary(card, id)
