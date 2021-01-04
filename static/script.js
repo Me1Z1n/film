@@ -57,7 +57,7 @@ function GetMovie(root, id)
 			const img = document.createElement('img')
 			img.src = 'http://image.tmdb.org/t/p/w500' + res.poster_path
 			img.class = "card-img-top"
-			img.width = "100%%"
+			img.width = 100%
 
 			imgTitle.appendChild(title);
 			imgTitle.appendChild(img);
