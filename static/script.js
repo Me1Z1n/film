@@ -44,7 +44,7 @@ function GetMovie(root, id)
 	fetch(url)
 		.then(response=>response.json())
 		.then(res=>{
-			root.className = "row row-cols-md-5";
+			root.className = "row row-cols-md-2";
 
 			const imgTitle = document.createElement('div')
 			imgTitle.className ="col card"
@@ -126,6 +126,7 @@ function GetSimilary(card, id)
 function SearchFilm(root)
 {
 	root.innerHTML=""
+	root.className = "row row-cols-md-2"
 	const box = document.getElementById("search")
 	const movie = box.value;
 	const card = document.createElement('div')
