@@ -44,8 +44,7 @@ function GetMovie(root, id)
 	fetch(url)
 		.then(response=>response.json())
 		.then(res=>{
-			const cont = document.getElementById("result");
-			cont.className = "row row-cols-md-2";
+			root.className = "row row-cols-md-5";
 
 			const imgTitle = document.createElement('div')
 			imgTitle.className ="col card"
@@ -57,7 +56,6 @@ function GetMovie(root, id)
 			const img = document.createElement('img')
 			img.src = 'http://image.tmdb.org/t/p/w500' + res.poster_path
 			img.class = "card-img-top"
-			img.width = 100%
 
 			imgTitle.appendChild(title);
 			imgTitle.appendChild(img);
@@ -84,7 +82,6 @@ function GetMovie(root, id)
 
 			let card = document.createElement('dl') 
 			GetSimilary(card, id)
-			//card.className = "text-muted"
 			
 			root.appendChild(imgTitle)
 			root.appendChild(opys)
@@ -129,18 +126,16 @@ function GetSimilary(card, id)
 function SearchFilm(root)
 {
 	root.innerHTML=""
-	console.log("a")
 	const box = document.getElementById("search")
 	const movie = box.value;
 	const card = document.createElement('div')
-	console.log(movie)
 	if (movie != "")
 	{
 		url = "https://api.themoviedb.org/3/search/movie?api_key=3a66dca4ab982982a2e4d01db94410b4&language=uk&query="+movie +"&page=1&include_adult=true&include_image_language=uk,null"
 		fetch(url)
 		.then(response => response.json())
 		.then(res => {
-			if(res.total_results === 0)
+			if(res.total_results == 0)
 			{
 				card.innerText = "Нічого не знайдено(( Спробуйте ввести назву фільму англійською"
 			}
